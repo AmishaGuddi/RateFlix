@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rateflix</title>
+
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Tektur&display=swap" 
+        rel="stylesheet" />
+
+        <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
+        crossorigin="anonymous" />
+
+        <style>
+            body {
+                background: rgba(0, 0, 0, 0.7)
+                url("https://images.unsplash.com/photo-1485095329183-d0797cdc5676?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1vdmllJTIwcmV2aWV3fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-blend-mode: darken;
+                color: white;
+            }
+            img {
+              width: 100%;
+            }
+      
+            img {
+              margin-top: 3.5rem;
+              width: 25%;
+            }
+            .div1 {
+              margin-top: 3.2rem;
+            }
+      
+            #MovieDetails {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+      
+        
+          </style>
+
+
+    </head>
+
+    <body>
+        
+        <div class="container-fluid">
+
+            <a class="navbar-brand float-start" href="/main.html">
+              <h1 style="font-weight: bold; color: #cdcdcd; padding: 10% 0 0 10%;">
+                Rate<span style="color: rgb(221, 11, 11);">Flix</span>
+              </h1>
+          </a>
+
+  
+
+          <div class="float-end">
+            <a
+              style="margin: 20% 10% 0 0;"
+              class="btn btn-danger btn-md"
+              onclick="logout_btn()"
+              id="logoutBtn"
+              >Logout</a
+            >
+          </div>
+        </div>
+        <!-- </nav> -->
+    
+        <div id="MovieDetails">
+          <img id="detailImage" src="" alt="" />
+          <h2 id="detailTitle"></h2>
+          <h5 id="detailGenre"></h5>
+          <h5 id="detailRating"></h5>
+          <p id="detailDesc"></p>
+        </div>
+
+
+
+        <!-- <div class="book-reader">
+          <div class="book-pages"></div>
+          <div class="controls">
+            <button class="prev-btn">Previous</button>
+            <button class="next-btn">Next</button>
+          </div>
+        </div> -->
+    
+        <script src="script.js"></script>
+
+        <script>
+          function logout_btn() {
+            alert("Logout Successful");
+            localStorage.removeItem("token");
+            window.location.href = "./index.html";
+          }
+
+
+    
+        //   const prevBtn = document.querySelector(".prev-btn");
+        //   const nextBtn = document.querySelector(".next-btn");
+        //   const bookPagesContainer = document.querySelector(".book-pages");
+    
+        //   let currentPage = 0;
+        //   const pageContent = [
+        //     "Page 1 content",
+        //     "Page 2 content",
+        //     "Page 3 content",
+        //     // Add more page content as needed
+        //   ];
+    
+        //   // Function to render the pages
+        //   function renderPages() {
+        //     bookPagesContainer.innerHTML = "";
+        //     pageContent.forEach((content, index) => {
+        //       const page = document.createElement("div");
+        //       page.classList.add("page");
+        //       page.textContent = content;
+        //       if (index === currentPage) {
+        //         page.style.display = "block";
+        //       }
+        //       bookPagesContainer.appendChild(page);
+        //     });
+        //   }
+    
+        //   // Function to update the visibility of pages
+        //   function updatePageVisibility() {
+        //     const pages = document.querySelectorAll(".page");
+        //     pages.forEach((page, index) => {
+        //       if (index === currentPage) {
+        //         page.style.display = "block";
+        //       } else {
+        //         page.style.display = "none";
+        //       }
+        //     });
+        //   }
+    
+        //   // Function to navigate to the previous page
+        //   function goToPreviousPage() {
+        //     if (currentPage > 0) {
+        //       currentPage--;
+        //       updatePageVisibility();
+        //     }
+        //   }
+    
+        //   // Function to navigate to the next page
+        //   function goToNextPage() {
+        //     const totalPages = pageContent.length;
+        //     if (currentPage < totalPages - 1) {
+        //       currentPage++;
+        //       updatePageVisibility();
+        //     }
+        //   }
+    
+        //   prevBtn.addEventListener("click", goToPreviousPage);
+        //   nextBtn.addEventListener("click", goToNextPage);
+    
+        //   // Initial rendering of pages
+        //   renderPages();
+        // 
+        </script>
+        <script
+          src="https://kit.fontawesome.com/3442acf2df.js"
+          crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      </body>
+
+
+
+</html>

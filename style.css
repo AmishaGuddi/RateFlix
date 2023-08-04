@@ -1,0 +1,115 @@
+
+
+
+
+
+.head {
+    text-shadow: 5px 5px 5px black;
+  }
+  .box {
+    background: rgba(0, 0, 0, 0.7)
+      url("https://images.unsplash.com/photo-1485095329183-d0797cdc5676?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1vdmllJTIwcmV2aWV3fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    background-blend-mode: darken;
+  }
+  .firstSection {
+    height: 100vh;
+  }
+  .box-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+    max-width: 50%;
+    height: 80%;
+    text-align: center;
+  }
+
+  
+
+  
+  .text-big {
+    font-size: 41px;
+  }
+  .text-small {
+    font-size: 18px;
+  }
+  .firstHalf {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #search {
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 9px;
+  }
+  img {
+    width: 50%;
+  }
+
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: .9rem 9%;
+    background: rgb(221, 11, 11);
+}
+
+.footer-text,
+.footer-icon {
+    position: relative;
+}
+
+.footer-text  {
+    font-size: 1.1rem;
+    margin: 0 0 0;
+}
+
+.footer-icon a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    background: blueviolet;
+    border: .2rem   solid white ;
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.footer-icon a::before  {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: yellow;
+    z-index: -1;
+    transition: .5s;
+}
+
+.footer-icon a:hover:before {
+    width: 100%;
+}
+
+.footer-icon a i {
+    font-size: 2.4rem;
+    color: #1d1d1b;
+    transition: .5s;
+}
+
+.footer-icon a:hover i {
+    color: pink;
+}

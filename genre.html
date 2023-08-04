@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Genre</title>
+
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Tektur&display=swap" 
+        rel="stylesheet" /> 
+
+        <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
+        crossorigin="anonymous" />
+
+        <style>
+            body {
+
+              background: rgba(0, 0, 0, 0.7)
+                url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW92aWUlMjByZXZpZXd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-blend-mode: darken;
+            }
+            #show {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              /* margin-top: 50px; */
+            }
+            .pic {
+              height: 90%;
+              width: 90%;
+              border-radius: 10px;
+            }
+      
+            #temp {
+              /* border: 2px solid; */
+              padding: 2px;
+              margin: 5px;
+              margin-top: 50px;
+              position: relative;
+            }
+            spans {
+              position: absolute;
+              top: 48%;
+              left: 0;
+              right: 0;
+              text-align: center;
+              background-color: rgba(0, 0, 0, 0.7);
+              padding: 15px 0 16px;
+              margin-top: -28px;
+              text-transform: uppercase;
+              text-decoration: none;
+              font-size: 20px;
+              line-height: 1.25;
+              color: #fff;
+            }
+          </style>
+
+    </head>
+
+
+    <body>
+        <div class="container-fluid">
+
+          <a class="navbar-brand float-start" href="/genre.html">
+            <h1 style="font-weight: bold; color: #cdcdcd; padding: 5% 0 0 5%;">
+              Rate<span style="color: rgb(221, 11, 11);">Flix</span>
+            </h1>
+        </a>
+
+
+          <div class="float-end my-2">
+            <!-- <button class="btn btn-primary mx-2" id="btn">ADD</button>  -->
+            <button class="btn btn-danger" style="margin: 20% 10% 0 0; "  onclick="logout_btn()" id="logout">
+              LOGOUT
+            </button>
+          </div>
+        </div>
+    
+        <div id="show"></div>
+    
+        <script>
+          function logout_btn() {
+            alert("Logout Successful");
+            localStorage.removeItem("token");
+            window.location.href = "./index.html";
+          }
+    
+          if (localStorage.getItem("token") === null) {
+            window.location.href = "./login.html";
+          }
+          fetch("http://localhost:5000/data", {
+            method: "GET",
+          })
+            .then((r) => r.json())
+            .then((data) => {
+              const movies = document.getElementById("show");
+              data.map((el) => {
+                const div = document.createElement("div");
+                div.id = "temp";
+                const image = document.createElement("img");
+                image.src = el.image;
+                image.className = "pic";
+                const title = document.createElement("spans");
+                title.innerText = el.title;
+                div.addEventListener("click", () => {
+                  window.location.href = "./main.html";
+                });
+                div.append(title, image);
+                movies.append(div);
+              });
+            });
+        </script>
+      </body>
+
+
+
+</html> 
